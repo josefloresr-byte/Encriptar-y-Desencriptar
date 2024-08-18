@@ -1,0 +1,133 @@
+/* Variables CSS */
+:root {
+    --color-fondo: #f8f9fa; /* Fondo claro y limpio */
+    --color-texto: #212529; /* Texto en negro suave */
+    --color-boton: #0d6efd; /* Azul moderno */
+    --color-texto-boton: #ffffff; /* Blanco para texto de botón */
+    --color-mensaje-bg: #e9ecef; /* Fondo claro para mensajes */
+    --color-placeholder: #6c757d; /* Placeholder en gris suave */
+    --color-borde: #dee2e6; /* Borde suave */
+    --color-hover: #0056b3; /* Color hover para botones */
+    --radio-borde: 8px; /* Borde redondeado */
+    --transicion: 0.3s ease; /* Transiciones suaves */
+}
+
+/* Reseteo general */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    padding: 20px;
+}
+
+/* Estilo del logo */
+.logo {
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 150px; /* Tamaño más adecuado */
+}
+
+/* Estilo del contenedor principal */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Estilo del área de texto */
+.text-area, .mensaje {
+    border: 1px solid var(--color-borde);
+    padding: 15px;
+    border-radius: var(--radio-borde);
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    transition: border-color var(--transicion);
+}
+
+.text-area:focus, .mensaje:focus {
+    outline: none;
+    border-color: var(--color-boton);
+}
+
+::placeholder {
+    color: var(--color-placeholder);
+}
+
+/* Estilo del mensaje */
+.mensaje {
+    background-color: var(--color-mensaje-bg);
+    background-image: url("/imagenes/Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px; /* Ajuste del tamaño de la imagen */
+}
+
+/* Estilo de los botones */
+.botones, .copiar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-desencriptar, .btn-encriptar, .copiar {
+    background-color: var(--color-boton);
+    border: none;
+    border-radius: var(--radio-borde);
+    color: var(--color-texto-boton);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px 20px;
+    transition: background-color var(--transicion), transform var(--transicion);
+    text-align: center;
+}
+
+.btn-desencriptar:hover, .btn-encriptar:hover, .copiar:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-2px); /* Efecto de elevación en hover */
+}
+
+.copiar {
+    margin-top: 10px;
+}
+
+/* Estilo de la información */
+.informacion {
+    color: #495057;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    main {
+        margin: 20px;
+    }
+
+    .logo {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .botones, .copiar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
